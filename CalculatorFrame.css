@@ -1,0 +1,89 @@
+.flex-cont-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: black;
+    height: auto;
+  }
+  
+  @keyframes swoopUp {
+    from{top:10px;}
+    to{top:0px;}
+  }
+  .flex-cont-scol {
+    position: relative;
+    animation-name: swoopUP;
+    animation-duration: 5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: dimgrey;
+    width: 33.333%;
+    min-width: 70px;  
+  }
+  
+  .flex-cont-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: darkgray;
+      height: 20%;    
+      margin: 1px;
+    }
+  
+    .flex-cont-srow {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      background-color:darkslategray;
+      width: 100%;
+    }
+  
+    .flex-res-srow {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      background-color: darkslategray;
+      width: 100%;
+    }
+  
+  
+    body {
+      /* background-color: steelblue; */
+      color: white;
+      font-weight: bold;
+    }
+  
+  
+    input[type=checkbox] {
+      height: 1em;
+      background-color: magenta;
+      border-radius: 5px;
+      border: none;
+    }
+  
+    .numberIn {
+      width: 100%;
+      min-width: 50px;
+      border-radius: 5px;
+      height: 1.2em;
+      border: none;
+      margin: 1px;
+    }
+  
+    .result {
+      width: 3em;
+      border: none;
+      background: transparent;
+      margin-left: 10px;
+      color: white;
+      font-weight: bold;
+    }
+  
+    .flex-cont-row-bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: center ;
+      background-color: s
+      height: 20%;    
+    }
