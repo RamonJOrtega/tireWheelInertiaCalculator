@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="CalculatorFrame.css">
+</head>
+<body>
+    <div class="flex-cont-col">
+        <div class="flex-cont-row">
+            <div class="flex-cont-scol" id="tireDiameter">  Tire Diameter   <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="tireDia"> inches          </div></div>
+            <div class="flex-cont-scol" id="tireWidth">     Tire Width  [mm]<div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wid." type="number" id="tireWid">    /              </div></div>
+            <div class="flex-cont-scol" id="aspectRatio">   Aspect Ratio [%]<div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter ratio" type="number" id="aspRat"> R               </div></div>
+            <div class="flex-cont-scol" id="calcDiameter">  Calc Diameter   <div class="flex-cont-srow"> <input type="checkbox" >           from tire size  </div></div>
+            <div class="flex-cont-scol" id="wheelDiameter"> Wheel Diameter  <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="wheelDia">inches          </div></div>
+        </div>
+
+        <div class="flex-cont-row">
+            <div class="flex-cont-scol" id="tireWeight">    Tire Weight     <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateTireInertia() type="number" id="tireWt">   pounds          </div></div>
+            <div class="flex-cont-scol" id="space0">        Calc Diameter   <div class="flex-cont-srow"> <input type="checkbox">     from tire size  </div></div>
+            <div class="flex-cont-scol" id="wheelWeight">   Wheel Weight    <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateWheelInertia() type="number" id="wheelWt">  pounds          </div></div>
+        </div>
+
+        <div class="flex-cont-row">
+            <div class="flex-cont-scol" id="tireResult">    <div class="flex-res-srow"> Tire           <input class="result" placeholder="Tire" disabled  id="tireRes"> </div>  </div>
+            <div class="flex-cont-scol" id="totalResult">   <div class="flex-res-srow"> Total          <input class="result" placeholder="Total" disabled  id="totalRes"></div>  </div>
+            <div class="flex-cont-scol" id="wheelResult">   <div class="flex-res-srow"> Wheel          <input class="result" placeholder="Wheel" disabled  id="wheelRes"></div>  </div>
+        </div>
+
+        <div class="flex-cont-row">
+
+        </div>
+
+        <div class="flex-cont-row-bottom">
+            square meter kilograms . . . the lower the better 
+
+    </div>
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
