@@ -14,4 +14,4 @@ Enter you Wheel Weight.
 See rotational inertia results at the bottom of the calculator
 The faster wheel tire combination will have the lowest total rotational inertia.
 
-[!alttext](https://github.com/RamonJustisOrtega/tireWheelInertiaCalculator/blob/main/calculator_image.png)
+![alttext](https://github.com/RamonJustisOrtega/tireWheelInertiaCalculator/blob/main/calculator_image.png)
