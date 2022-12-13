@@ -8,7 +8,7 @@ Run LiveServer on your localhost.
 
 Enter your Tire Diameter
 Enter your Tire Weight
-(Alternatively you can enter standard tire sizes e.g. 285/60R20)e
+(Alternatively you can enter standard tire sizes e.g. 285/60R20)
 Enter your Wheel Diameter.
 Enter you Wheel Weight.
 See rotational inertia results at the bottom of the calculator
