@@ -10,17 +10,17 @@
 <body>
     <div class="flex-cont-col">
         <div class="flex-cont-row">
-            <div class="flex-cont-scol" id="tireDiameter">  Tire Diameter   <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="tireDia"> inches          </div></div>
-            <div class="flex-cont-scol" id="tireWidth">     Tire Width  [mm]<div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wid." type="number" id="tireWid">    /              </div></div>
-            <div class="flex-cont-scol" id="aspectRatio">   Aspect Ratio [%]<div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter ratio" type="number" id="aspRat"> R               </div></div>
-            <div class="flex-cont-scol" id="calcDiameter">  Calc Diameter   <div class="flex-cont-srow"> <input type="checkbox" >           from tire size  </div></div>
-            <div class="flex-cont-scol" id="wheelDiameter"> Wheel Diameter  <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="wheelDia">inches          </div></div>
+            <div class="flex-cont-scol" id="tireDiameter">  Tire Diameter   <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="tireDia"> inch          </div></div>
+            <div class="flex-cont-scol" id="tireWidth">     Tire Width      <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter mm" type="number" id="tireWid">    /              </div></div>
+            <div class="flex-cont-scol" id="aspectRatio">   Aspect Ratio    <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter %" type="number" id="aspRat"> R               </div></div>
+            <div class="flex-cont-scol" id="calcDiameter">  Calc Diameter &#x24D8; <div class="flex-cont-srow"> <input type="checkbox" >           from tire size  </div></div>
+            <div class="flex-cont-scol" id="wheelDiameter"> Wheel Diameter  <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="wheelDia">inch          </div></div>
         </div>
 
         <div class="flex-cont-row">
-            <div class="flex-cont-scol" id="tireWeight">    Tire Weight     <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateTireInertia() type="number" id="tireWt">   pounds          </div></div>
+            <div class="flex-cont-scol" id="tireWeight">    Tire Weight     <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateTireInertia() type="number" id="tireWt">   pound          </div></div>
             <div class="flex-cont-scol" id="space0">        Calc Diameter   <div class="flex-cont-srow"> <input type="checkbox">     from tire size  </div></div>
-            <div class="flex-cont-scol" id="wheelWeight">   Wheel Weight    <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateWheelInertia() type="number" id="wheelWt">  pounds          </div></div>
+            <div class="flex-cont-scol" id="wheelWeight">   Wheel Weight    <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateWheelInertia() type="number" id="wheelWt">  pound          </div></div>
         </div>
 
         <div class="flex-cont-row">
@@ -34,7 +34,8 @@
         </div>
 
         <div class="flex-cont-row-bottom">
-            square meter kilograms . . . the lower the better 
+            [square meter kilograms] . . .  lower numbers are faster 
+        </div>
 
     </div>
 
