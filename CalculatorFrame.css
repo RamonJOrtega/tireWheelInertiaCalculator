@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
-    background-color: black;
+    background-color: #1f1a24;
     height: auto;
   }
 
@@ -12,7 +11,7 @@
   flex-direction: row;
   justify-content: space-between;
   
-  background-color: darkgray;
+  background-color: #ff7597;
   /* height: 20%;     */
   margin: 3px;
 }
@@ -26,7 +25,7 @@
   flex-direction: column;
   justify-content: space-between;
   
-  background-color: dimgrey;
+  background-color: #332940;
   width: 33.333%;
   min-width: 60px;  
   position: relative;
@@ -38,7 +37,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color:darkslategray;
+  background-color:282828;
   margin-top: 3px;
   margin-bottom: 3px;
   width: 95%;
@@ -48,7 +47,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: darkslategray;
+  background-color: #22303C;
   width: 100%;
 }
 
@@ -67,7 +66,7 @@
 
 input[type=checkbox] {
   height: 1em;
-  background-color: magenta;
+  accent-color: goldenrod;
   border-radius: 5px;
   border: none;
   margin-left: 3px;
@@ -89,11 +88,25 @@ input[type=checkbox] {
   margin-left: 3px;
   color: white;
   font-weight: bold;
+  min-width: 30px;
+
 }
 
 body {
   /* background-color: steelblue; */
   color: white;
   font-weight: bold;
+  font-family: Roboto, sans-serif;
+}
+
+span[id=checkToolTip]{
+  color: goldenrod;
+  font-size: .8em;
+  font-weight: bold;
+
+}
+span[id=postFix]{
+  color: grey;
+  font-size: .8em;
 }
  

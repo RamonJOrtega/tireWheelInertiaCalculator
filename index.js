@@ -18,6 +18,8 @@ const tireDia = document.getElementById("tireDia")
 const tireWid = document.getElementById("tireWid")
 const aspRat  = document.getElementById("aspRat")
 const tireWt  = document.getElementById("tireWt")
+const calcDia = document.getElementById("calcDia")
+const spc0    = document.getElementById("spc0")
 const wheelDia= document.getElementById("wheelDia")
 const wheelWt = document.getElementById("wheelWt")
 const tireRes = document.getElementById("tireRes")
@@ -29,18 +31,22 @@ const totalRes= document.getElementById("totalRes")
 // tireWid.value = 0
 // aspRat.value  = 0
 // tireWt.value  = 0 
+//calcDia.checked  = true;
 // wheelDia.value= 0
 // wheelWt.value = 0
 // tireRes.value = 0
 // wheelRes.value= 0
 // totalRes.value= 0
 
-console.log(tireDia.value)
+
+
 
 // tireDia.addEventListener("click", clearValue(tireDia.id))
 // wheelDia.addEventListener("click", clearValue(wheelDia))
-calcDiameter.addEventListener("click", diplayTireSizeElements)
-space0.addEventListener("click", diplayTireSizeElements)
+console.log(calcDia.checked)
+
+calcDia.addEventListener("change", diplayTireSizeElements)
+spc0.addEventListener("change", diplayTireSizeElements)
 
 function clearValue(id){
   console.log(id)
@@ -48,9 +54,11 @@ function clearValue(id){
 }
 
 function diplayTireSizeElements() {
+  console.log("value")
+  // checkbox.checked = !checkbox.checked;
+  // console.log(checkbox.checked)
   if (aspectRatio.style.display === "none") {aspectRatio.style.display = "block"} 
   else {aspectRatio.style.display = "none"} 
-  console.log('clicked')
   if (tireWidth.style.display === "none") {tireWidth.style.display = "block"} 
   else {tireWidth.style.display = "none"} 
   if (tireDiameter.style.display === "none") {tireDiameter.style.display = "block"} 
@@ -98,3 +106,5 @@ function calculateTotalInertia() {
   const totalInertia = Math.round((parseFloat(tireRes.value) + parseFloat(wheelRes.value))*10/10)
         totalRes.value = totalInertia
 }
+
+ 
