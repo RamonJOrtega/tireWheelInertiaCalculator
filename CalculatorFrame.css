@@ -2,88 +2,98 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
     background-color: black;
     height: auto;
   }
+
+.flex-cont-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   
-  @keyframes swoopUp {
-    from{top:10px;}
-    to{top:0px;}
-  }
-  .flex-cont-scol {
-    position: relative;
-    animation-name: swoopUP;
-    animation-duration: 5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: dimgrey;
-    width: 33.333%;
-    min-width: 70px;  
-  }
+  background-color: darkgray;
+  /* height: 20%;     */
+  margin: 3px;
+}
+
+@keyframes swoopDown {
+  from{bottom:15px; right:5px;}
+  to{bottom:0px; right: 0px;}
+}
+.flex-cont-scol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
-  .flex-cont-row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      background-color: darkgray;
-      height: 20%;    
-      margin: 1px;
-    }
+  background-color: dimgrey;
+  width: 33.333%;
+  min-width: 60px;  
+  position: relative;
+  animation-name: swoopDown;
+  animation-duration: 0.4s;
+}
   
-    .flex-cont-srow {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      background-color:darkslategray;
-      width: 100%;
-    }
-  
-    .flex-res-srow {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      background-color: darkslategray;
-      width: 100%;
-    }
-  
-  
-    body {
-      /* background-color: steelblue; */
-      color: white;
-      font-weight: bold;
-    }
-  
-  
-    input[type=checkbox] {
-      height: 1em;
-      background-color: magenta;
-      border-radius: 5px;
-      border: none;
-    }
-  
-    .numberIn {
-      width: 100%;
-      min-width: 50px;
-      border-radius: 5px;
-      height: 1.2em;
-      border: none;
-      margin: 1px;
-    }
-  
-    .result {
-      width: 3em;
-      border: none;
-      background: transparent;
-      margin-left: 10px;
-      color: white;
-      font-weight: bold;
-    }
-  
-    .flex-cont-row-bottom {
-      display: flex;
-      flex-direction: row;
-      justify-content: center ;
-      background-color: s
-      height: 20%;    
-    }
+.flex-cont-srow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color:darkslategray;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  width: 95%;
+}
+
+.flex-res-srow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: darkslategray;
+  width: 100%;
+}
+
+.flex-cont-row-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  background-color: slategray;
+  position: relative;
+  animation-name: swoopDown;
+  animation-duration: 0.4s;
+
+  height: 20%;
+  width: 100%;    
+}
+
+input[type=checkbox] {
+  height: 1em;
+  background-color: magenta;
+  border-radius: 5px;
+  border: none;
+  margin-left: 3px;
+}
+
+.numberIn {      
+  width: 100%;
+  min-width: 50px;
+  border-radius: 5px;
+  height: 2em;
+  border: none;
+  min-width: 30px;
+}
+
+.result {
+  width: 3em;
+  border: none;
+  background: transparent;
+  margin-left: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+body {
+  /* background-color: steelblue; */
+  color: white;
+  font-weight: bold;
+}
+ 
