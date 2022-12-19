@@ -6,42 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="CalculatorFrame.css">
+    <!-- <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@v0.147.0/build/three.module.js"
+          }
+        }
+      </script> -->
+
+
 </head>
-<body>
-    <div class="flex-cont-col">
-        <div class="flex-cont-row">
-            <div class="flex-cont-scol" id="tireDiameter">  Tire Diameter   <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="tireDia">     <span id="postFix"> inch </span>      </div></div>
-            <div class="flex-cont-scol" id="tireWidth">     Tire Width      <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter mm" type="number" id="tireWid">    /              </div></div>
-            <div class="flex-cont-scol" id="aspectRatio">   Aspect Ratio    <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter %" type="number" id="aspRat"> R              </div></div>
-            <div class="flex-cont-scol" id="calcDiameter">  Calc Diameter <span id="checkToolTip">&#x24D8;</span> <div class="flex-cont-srow"> <input type="checkbox" id="calcDia">           <span id="postFix"> ex. 305/30R20 </span>  </div></div>
-            <div class="flex-cont-scol" id="wheelDiameter"> Wheel Diameter  <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter dia." type="number" id="wheelDia"> <span id="postFix"> inch </span>       </div></div>
+<body class="CalcBody">
+    <div class="flex-col">
+     
+        <div class="flex-row">
+            <div class="flex-scol" id="tireDiameter">   Tire Diameter   <div class="flex-srow"> <input class ="numIn" id="tireDia" >    <span class="postFix1"> inch        </span></div></div>
+            <div class="flex-scol" id="tireWidth">      Tire Width      <div class="flex-srow"> <input class ="numIn" id="tireWid" > /                                          </div></div>
+            <div class="flex-scol" id="aspectRatio">    Aspect Ratio    <div class="flex-srow"> <input class ="numIn" id="aspRat">   R                                          </div></div>
+            <div class="flex-scol" id="calcDiameter">  <span id="toolTip">&#x24D8;</span> Calc Diameter
+                                     <div class="flex-srow"> <input                id="calcDia" >  <span class="postFix1"> ex. 325/40 R22 </span> <p id="tipText"> Optional. <br> Use standard notation to get tire diameter </p> </div></div>
+            <div class="flex-scol" id="wheelDiameter">  Wheel Diameter  <div class="flex-srow"> <input class ="numIn" id="wheelDia" > <span class="postFix1"> inch          </span> </div></div>
         </div>
 
-        <div class="flex-cont-row">
-            <div class="flex-cont-scol" id="tireWeight">    Tire Weight     <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateTireInertia() type="number" id="tireWt">    <span id="postFix"> pound </span>            </div></div>
-            <div class="flex-cont-scol" id="space0">Calc Diameter <span id="checkToolTip">&#x24D8;</span>  <div class="flex-cont-srow"> <input type="checkbox" id="spc0">     <span id="postFix"> from tire size </span>   </div></div>
-            <div class="flex-cont-scol" id="wheelWeight">   Wheel Weight    <div class="flex-cont-srow"> <input class = "numberIn" placeholder="enter wt." onInput = calculateWheelInertia() type="number" id="wheelWt">   <span id="postFix"> pound </span>         </div></div>
+        <div class="flex-row">
+            <div class="flex-scol" id="tireWeight">     Tire Weight     <div class="flex-srow"> <input class ="numIn" id="tireWt" >   <span class="postFix1"> pound         </span>  </div></div>
+            <div class="flex-scol" id="space0"> <span id="toolTip0">&#x24D8;</span> Calc Diameter 
+                                     <div class="flex-srow"> <input                 id="spc0">     <span class="postFix1"> ex. 305/30R20 </span> <p id="tipText0"> Optional <br> Use standard notation to get tire diameter </p>  </div></div>
+            <div class="flex-scol" id="wheelWeight">    Wheel Weight    <div class="flex-srow"> <input  class ="numIn" id="wheelWt" > <span class="postFix1"> pound         </span>   </div></div>
+        </div>
+      
+        <div class="flex-row">
+            
+            <div class="flex-scol" id="tireResult">    Tire  Inertia    <div class="flex-srow">  <input class="result" disabled  id="tireRes"> <span class="postFix1"> kg&#x2022;m<sup>2</sup>          </span> </div>  </div>
+            <div class="flex-scol" id="totalResult">   <span id="toolTip1">&#x24D8;</span> Total Rotational inertia <div class="flex-srow ">   </div>   <div class="flex-srow">  <input class="result" disabled  id="totalRes"> <span class="postFix1"> kg&#x2022;m<sup>2</sup> </span></div> <p id="tipText1"> Also called moment of inertia. <br> Results shown in kilogram&#x2022;meter<sup>2</sup>. <br> Keep numbers small to make 0-60 time faster. </p> </div> 
+            <div class="flex-scol" id="wheelResult">   Wheel Inertia    <div class="flex-srow">  <input class="result" disabled  id="wheelRes"> <span class="postFix1"> kg&#x2022;m<sup>2</sup>         </span></div>  </div>
         </div>
 
-        <div class="flex-cont-row">
-            <div class="flex-cont-scol" id="tireResult">    <div class="flex-res-srow"> Tire           <input class="result" placeholder="Tire" disabled  id="tireRes"> </div>  </div>
-            <div class="flex-cont-scol" id="totalResult">   <div class="flex-res-srow"> Total          <input class="result" placeholder="Total" disabled  id="totalRes"></div>  </div>
-            <div class="flex-cont-scol" id="wheelResult">   <div class="flex-res-srow"> Wheel          <input class="result" placeholder="Wheel" disabled  id="wheelRes"></div>  </div>
-        </div>
+        <!-- <div class="flex-row">
+            <script type="module">
 
-        <div class="flex-cont-row">
-
-        </div>
-
-        <div class="flex-cont-row-bottom">
-            [square meter kilograms] : lower numbers are faster 
-        </div>
-
+                import * as THREE from 'three';
+            
+                const scene = new THREE.Scene();
+                console.log(window.innerWidth)
+                console.log(window.innerHeight)
+                const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+            
+                const renderer = new THREE.WebGLRenderer();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                document.body.appendChild( renderer.domElement );
+                const geometryWheel = new THREE.CylinderGeometry( 20, 32, 10, 20 );
+                const materialWheel = new THREE.MeshBasicMaterial( { color: 0xDAA520 } );
+                const wheel = new THREE.Mesh( geometryWheel, materialWheel );
+                scene.add( wheel );
+                const geometryTire = new THREE.CylinderGeometry( 32, 32, 5, 20 );
+                const materialTire = new THREE.MeshBasicMaterial( { color: 0x332940 } );
+                const tire = new THREE.Mesh( geometryTire, materialTire );
+                scene.add( tire );
+            
+                camera.position.z = 50;
+                wheel.rotation.x += 1.57;
+                tire.rotation.x += 1.57;
+                // wheel.rotation.z += .785;
+                function animate() {
+                requestAnimationFrame( animate );
+                // wheel.rotation.z += 0.01;
+                wheel.rotation.y += 0.01;
+            
+            
+                renderer.render( scene, camera );
+            }
+            animate();
+            
+            </script>
+        </div> -->
     </div>
-
-
-
-
 
     <script src="index.js"></script>
 </body>

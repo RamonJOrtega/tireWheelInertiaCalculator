@@ -1,31 +1,44 @@
-.flex-cont-col {
+.flex-col {
+    background-color: transparent;
+    /* background-color: #1f1a24; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    background-color: #1f1a24;
+    justify-content: flex-end;
     height: auto;
   }
 
-.flex-cont-row {
+.flex-row {
+  background-color: transparent;
+  /* background-color: #ff7597; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-  background-color: #ff7597;
   /* height: 20%;     */
   margin: 3px;
+}
+
+.flex-row-bottom {
+  background-color: transparent;
+    /* background-color: #161f27; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  position: relative;
+  animation-name: swoopDown;
+  animation-duration: 0.4s;
+
 }
 
 @keyframes swoopDown {
   from{bottom:15px; right:5px;}
   to{bottom:0px; right: 0px;}
 }
-.flex-cont-scol {
+.flex-scol {
+  background-color: transparent;
+  /* background-color: #332940; */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
-  background-color: #332940;
+  justify-content: flex-end;
   width: 33.333%;
   min-width: 60px;  
   position: relative;
@@ -33,80 +46,141 @@
   animation-duration: 0.4s;
 }
   
-.flex-cont-srow {
+.flex-srow {
+  background-color: transparent;
+  /* background-color:#282828; */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  background-color:282828;
   margin-top: 3px;
   margin-bottom: 3px;
-  width: 95%;
+  width: 98%;
 }
 
 .flex-res-srow {
+  background-color: transparent;
+  /* background-color: #22303C; */
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: #22303C;
+  justify-content: flex-start;
+  margin-top: 3px;
+  margin-bottom: 3px;
   width: 100%;
 }
 
-.flex-cont-row-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: center ;
-  background-color: slategray;
-  position: relative;
-  animation-name: swoopDown;
-  animation-duration: 0.4s;
 
-  height: 20%;
-  width: 100%;    
-}
 
 input[type=checkbox] {
   height: 1em;
-  accent-color: goldenrod;
+  accent-color: rgb(255, 222, 34);
   border-radius: 5px;
   border: none;
   margin-left: 3px;
 }
 
-.numberIn {      
+.numIn {      
   width: 100%;
   min-width: 50px;
   border-radius: 5px;
   height: 2em;
   border: none;
   min-width: 30px;
+  margin-right: 5px;
+  font-size: 1em;
 }
 
 .result {
-  width: 3em;
+  /* width: 9em; */
+  width: 100%;
   border: none;
-  background: transparent;
-  margin-left: 3px;
-  color: white;
+  background: rgb(255, 222, 34);
+  border-radius: 5px;
+  height: 2em;
+  margin-right: 5px;
+  /* color: white; */
   font-weight: bold;
-  min-width: 30px;
-
+  min-width: 25px;
+  font-size: 1em;
 }
 
-body {
-  /* background-color: steelblue; */
+.CalcBody {
+  background-image: url("background.jpg");
+  background-color: transparent;
+
+  margin-top: 200px;
   color: white;
   font-weight: bold;
   font-family: Roboto, sans-serif;
 }
 
-span[id=checkToolTip]{
-  color: goldenrod;
+span[id=toolTip]{
+  color: rgb(255, 222, 34);
   font-size: .8em;
   font-weight: bold;
-
 }
-span[id=postFix]{
-  color: grey;
+span[id=toolTip0]{
+  color: rgb(255, 222, 34);
   font-size: .8em;
+  font-weight: bold;
+}
+span[id=toolTip1]{
+  color: rgb(255, 222, 34);
+  font-size: .8em;
+  font-weight: bold;
+  margin-right: 3px;
+}
+
+.postFix1{
+  color: darkgrey;
+  font-size: .8em;
+  /* margin-left: 3px; */
+}
+.postFix2{
+  color: darkgrey;
+  font-size: .8em;
+  margin-left: 5px;
 }
  
+p[id=tipText] {
+  display: none;
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+  background-color: #6a07eb;
+  padding: 4px;
+  font-size: .8rem;
+  color: darkgrey;
+  border-radius: 5px;
+  animation: fadeIn 0.7s;
+}
+
+p[id=tipText0] {
+  display: none;
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+  background-color: #6a07eb;
+  padding: 4px;
+  font-size: .8rem;
+  color: darkgrey;
+  border-radius: 5px;
+  animation: fadeIn 0.7s;
+}
+
+p[id=tipText1] {
+  display: none;
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+  background-color: #6a07eb;
+  padding: 4px;
+  font-size: .8rem;
+  color: darkgrey;
+  border-radius: 5px;
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to { opacity: 1}
+}
