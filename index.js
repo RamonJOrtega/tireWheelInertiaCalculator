@@ -1,16 +1,32 @@
 const tireDiameter  = document.getElementById("tireDiameter")
+const tireDiameter0  = document.getElementById("tireDiameter0")
+const tireDiameter1  = document.getElementById("tireDiameter1")
 const tireWidth     = document.getElementById("tireWidth")
+const tireWidth0     = document.getElementById("tireWidth0")
+const tireWidth1     = document.getElementById("tireWidth1")
 const aspectRatio   = document.getElementById("aspectRatio")
+const aspectRatio0   = document.getElementById("aspectRatio0")
 const calcDiameter  = document.getElementById("calcDiameter")
+const calcDiameter0  = document.getElementById("calcDiameter0")
+const calcDiameter1  = document.getElementById("calcDiameter1")
 const wheelDiameter = document.getElementById("wheelDiameter")
 const tireWeight    = document.getElementById("tireWeight")
+const space        = document.getElementById("space")
 const space0        = document.getElementById("space0")
 const wheelWeight   = document.getElementById("wheelWeight")
 
-tireDiameter.style.display  ="block"
+tireDiameter.style.display  ="inline"
+tireDiameter0.style.display  ="inline"
+tireDiameter1.style.display  ="inline"
 tireWidth.style.display     ="none"
+tireWidth0.style.display     ="none"
+tireWidth1.style.display     ="none"
 aspectRatio.style.display   ="none"
-calcDiameter.style.display  ="block"
+aspectRatio0.style.display   ="none"
+calcDiameter.style.display  ="inline"
+calcDiameter0.style.display  ="inline"
+calcDiameter1.style.display  ="none"
+space.style.display        ="none"
 space0.style.display        ="none"
 
 const tireDia = document.getElementById("tireDia")
@@ -70,11 +86,11 @@ wheelDia.max = 100
 wheelWt.max  = 100
 
 
-toolTip.addEventListener('mouseover',  () => tipText.style.display='block', false) 
+toolTip.addEventListener('mouseover',  () => tipText.style.display='inline', false) 
 toolTip.addEventListener('mouseleave', () => tipText.style.display='none', false) 
-toolTip0.addEventListener("mouseover", () => tipText0.style.display='block', false)
+toolTip0.addEventListener("mouseover", () => tipText0.style.display='inline', false)
 toolTip0.addEventListener('mouseleave',() => tipText0.style.display="none", false)
-toolTip1.addEventListener("mouseover", () => tipText1.style.display='block', false)
+toolTip1.addEventListener("mouseover", () => tipText1.style.display='inline', false)
 toolTip1.addEventListener('mouseleave',() => tipText1.style.display="none", false)
 
 
@@ -103,20 +119,40 @@ function displayTireSizeElements() {
   aspRat.value = null
   tireRes.value=null
   totalRes.value=null
-  if (aspectRatio.style.display === "none") {aspectRatio.style.display = "block"} 
+  if (aspectRatio.style.display === "none") {aspectRatio.style.display = "inline"} 
   else {aspectRatio.style.display = "none"} 
-  if (tireWidth.style.display === "none") {tireWidth.style.display = "block"} 
+  if (aspectRatio0.style.display === "none") {aspectRatio0.style.display = "inline"} 
+  else {aspectRatio0.style.display = "none"} 
+  if (tireWidth.style.display === "none") {tireWidth.style.display = "inline"} 
   else {tireWidth.style.display = "none"} 
-  if (tireDiameter.style.display === "none") {tireDiameter.style.display = "block"} 
-  else {tireDiameter.style.display = "none"} 
+  if (tireWidth0.style.display === "none") {tireWidth0.style.display = "inline"} 
+  else {tireWidth0.style.display = "none"} 
+  if (tireWidth1.style.display === "none") {tireWidth1.style.display = "inline"} 
+  else {tireWidth1.style.display = "none"} 
+  if (tireDiameter.style.display === "none") {tireDiameter.style.display = "inline"} 
+  else {tireDiameter.style.display = "none"}
+  if (tireDiameter0.style.display === "none") {tireDiameter0.style.display = "inline"} 
+  else {tireDiameter0.style.display = "none"}  
+  if (tireDiameter1.style.display === "none") {tireDiameter1.style.display = "inline"} 
+  else {tireDiameter1.style.display = "none"}
   if (calcDiameter.style.display === "none") {
     calcDia.checked = spc0.checked
-    calcDiameter.style.display = "block"
-  } else {calcDiameter.style.display = "none"} 
+    calcDiameter.style.display = "inline"
+    calcDiameter0.style.display = "inline"
+    calcDiameter1.style.display = "none"
+  } else {
+    calcDiameter.style.display = "none"
+    calcDiameter0.style.display = "none"
+    calcDiameter1.style.display = "inline"
+  } 
   if (space0.style.display === "none") {
     spc0.checked=calcDia.checked
-    space0.style.display = "block"
-  } else {space0.style.display = "none"} 
+    space.style.display="inline"
+    space0.style.display = "inline"
+  } else {
+    space.style.display = "none"
+    space0.style.display = "none"
+  } 
 }
 
 function calcTireDiaFromSize () {

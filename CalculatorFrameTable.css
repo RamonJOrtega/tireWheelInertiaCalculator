@@ -1,75 +1,35 @@
-.flex-col {
-    background-color: transparent;
-    /* background-color: #1f1a24; */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: auto;
-    
+table, th, td {
+    /* border:1px solid grey; */
+    padding: 0;
+    border: none;
   }
-
-.flex-row {
-  background-color: transparent;
-  /* background-color: #ff7597; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* height: 20%;     */
-  /* margin: 3px; */
-}
-
-.flex-row-bottom {
-  background-color: transparent;
-    /* background-color: #161f27; */
-  display: flex;
-  flex-direction: row;
-  justify-content: center ;
-  position: relative;
-  animation-name: swoopDown;
-  animation-duration: 0.4s;
-
-}
 
 @keyframes swoopDown {
   from{bottom:15px; right:5px;}
   to{bottom:0px; right: 0px;}
 }
-.flex-scol {
-  background-color: transparent;
-  /* background-color: #332940; */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 33.333%;
-  min-width: 60px;  
-  position: relative;
-  animation-name: swoopDown;
-  animation-duration: 0.4s;
-}
-  
-.flex-srow {
-  background-color: transparent;
-  /* background-color:#282828; */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  /* margin-top: 3px; */
-  /* margin-bottom: 3px; */
-  /* width: 100%; */
+
+
+div{
+    position: relative;
+    animation-name: swoopDown;
+    animation-duration: .4s;
 }
 
-.flex-res-srow {
-  background-color: transparent;
-  /* background-color: #22303C; */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  /* margin-top: 3px; */
-  /* margin-bottom: 3px; */
-  width: 100%;
-}
+.flex-srow-c {
+    background-color: transparent;
+    /* background-color:#282828; */
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    /* margin-top: 3px; */
+    /* margin-bottom: 3px; */
+    /* width: 100%; */
+  }
+
 
 input[type=checkbox] {
+  display: inline;
   height: 1em;
   accent-color: rgb(255, 222, 34);
   border-radius: 5px;
@@ -77,18 +37,8 @@ input[type=checkbox] {
   /* margin-left: 3px; */
 }
 
-.numIn {      
-  width: 100%;
-  min-width: 50px;
-  border-radius: 5px;
-  height: 2em;
-  border: none;
-  min-width: 30px;
-  /* margin-right: 5px; */
-  font-size: 1em;
-}
 .num {      
-  width: 100%;
+  width: 97%;
   min-width: 30px;
   border-radius: 5px;
   height: 2em;
@@ -101,7 +51,7 @@ input[type=checkbox] {
 
 .result {
   /* width: 9em; */
-  width: 100%;
+  width: 97%;
   border: none;
   background: rgb(255, 222, 34);
   border-radius: 5px;
@@ -123,21 +73,21 @@ input[type=checkbox] {
   font-family: Roboto, sans-serif;
 }
 
-div[id=toolTip]{
+span[id=toolTip]{
   color: rgb(255, 222, 34);
   font-size: .8em;
   font-weight: bold;
   margin-right: 3px;
 
 }
-div[id=toolTip0]{
+span[id=toolTip0]{
   color: rgb(255, 222, 34);
   font-size: .8em;
   font-weight: bold;
   margin-right: 3px;
 
 }
-div[id=toolTip1]{
+span[id=toolTip1]{
   color: rgb(255, 222, 34);
   font-size: .8em;
   font-weight: bold;
@@ -151,7 +101,7 @@ div[id=toolTip1]{
 }
 .postFix2{
   color: darkgrey;
-  font-size: .8em;
+  font-size: 1.2em;
   /* margin-left: 5px; */
 }
  
