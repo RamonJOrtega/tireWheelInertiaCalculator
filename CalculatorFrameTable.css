@@ -16,17 +16,10 @@ div{
     animation-duration: .4s;
 }
 
-.flex-srow-c {
-    background-color: transparent;
-    /* background-color:#282828; */
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    /* margin-top: 3px; */
-    /* margin-bottom: 3px; */
-    /* width: 100%; */
-  }
-
+.Tire{
+    letter-spacing: .05em;
+    font-size: 1em;
+}
 
 input[type=checkbox] {
   display: inline;

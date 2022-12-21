@@ -18,16 +18,15 @@
 
 </head>
 <body class="CalcBody">
-
+    
 
     <table style="width:100%">
         <tr>
-            <td colspan="2"> <div id="tireDiameter">Tire Diameter</div> <div id="tireWidth">Tire Width</div></td>
-            <td colspan="3"> <div id="calcDiameter" > Diameter Calc <span id="toolTip">&#x24D8;</span> <p id="tipText"> Optional. <br> Use standard notation to get tire diameter </p></div>
-                
+            <td colspan="2" > <div id="tireDiameter" class="Tire"> &nbsp;Tire Diameter </div> <div id="tireWidth"> &nbsp; Tire Width</div></td>
+            <td colspan="3" > <div id="calcDiameter" >  Standard Notation <span id="toolTip">&#x24D8;</span> <p id="tipText"> Optional. <br> Use standard notation to get tire diameter </p></div> 
                 <div id="aspectRatio">Aspect Ratio</div>
             </td>
-            <td colspan="2"> <div>Wheel Diameter</div> </td>
+            <td colspan="2" > <div>                     Wheel Diameter</div> </td>
         </tr>
         
         <tr>
@@ -40,25 +39,25 @@
         </tr>
 
         <tr>
-            <td colspan="2"> <div>Tire Weight</div> </td>
+            <td colspan="2"> <div class="Tire">  &nbsp;  Tire Weight</div> </td>
             <td colspan="3">  <div id="space" >  Diameter Calc <span id="toolTip0">&#x24D8;</span> <p id="tipText0"> Optional. <br> Use standard notation to get tire diameter </p></div> </td>
             <td colspan="2"> <div>Wheel Weight</div> </td>
         </tr>
         
           <tr>
             <td><div  > <input class="num" id="tireWt" type="number"> </td>
-            <td style="text-align:center"><div class="postFix1"> pound </div> </div></td>
+            <td style="text-align:right"><div class="postFix1"> pound </div> </div></td>
 
             <td colspan="3"> <div id="space0">  <input id="spc0" type="checkbox"> <span class="postFix1"> ex. 325/40R22 </span>  </div> </td>
             <td> <div > <input class="num" id="wheelWt" type="number">  </div> </td>
-            <td style="text-align:center"><div class="postFix1"> pound </div></td>
+            <td style="text-align:right"><div class="postFix1"> pound </div></td>
           </tr>
 
           <tr>
-            <td colspan="2"> <div>Tire Inertia</div>  </td>
+            <td colspan="2"> <div class="Tire"> &nbsp; Tire Inertia</div>  </td>
             <td colspan="3"> <div> Total Rotational Inertia <span id="toolTip1" > &#x24D8; </span> 
                 <p id="tipText1"> Also called moment of inertia.<br> Results shown in kilogram&#x2022;meter<sup>2</sup>. <br> Keep numbers small to make 0-60 time faster. </p> </div></td>
-            <td colspan="2"> <div>Tire Inertia</div> </td>
+            <td colspan="2"> <div>Wheel Inertia</div> </td>
           </tr>  
           
         <tr>
