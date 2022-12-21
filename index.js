@@ -14,6 +14,10 @@ const tireWeight    = document.getElementById("tireWeight")
 const space        = document.getElementById("space")
 const space0        = document.getElementById("space0")
 const wheelWeight   = document.getElementById("wheelWeight")
+const tireResult   = document.getElementById("tireResult")
+const wheelResult   = document.getElementById("wheelResult")
+const totalResult   = document.getElementById("totalResult")
+
 
 tireDiameter.style.display  ="inline"
 tireDiameter0.style.display  ="inline"
@@ -48,11 +52,11 @@ const tipText0= document.getElementById("tipText0")
 const toolTip1= document.getElementById("toolTip1")
 const tipText1= document.getElementById("tipText1")
 
-tireDia.placeholder  = "input dia. (larger than wheel)"
+tireDia.placeholder  = "input dia."
 tireWid.placeholder  = "input mm"
 aspRat.placeholder   = "input %"
 tireWt.placeholder   = "input wt."
-wheelDia.placeholder = "input dia. (smaller than tire)"
+wheelDia.placeholder = "input dia. > tire"
 wheelWt.placeholder  = "input wt."
 tireRes.placeholder  = "need more input"
 wheelRes.placeholder = "need more input"
@@ -112,11 +116,28 @@ wheelWt.addEventListener("input", calculateWheelInertia)
 
 tireDia.addEventListener("input", ()=> tireDia.validity.valid||(tireDia.value=''))
 tireWid.addEventListener("input", ()=> tireWid.validity.valid||(tireWid.value=''))
+tireWid.addEventListener("input", validateTireWidthConvention) //make sure width is 3 digits divisible by 5
 aspRat.addEventListener("input", ()=> aspRat.validity.valid||(aspRat.value=''))
+aspRat.addEventListener("input", validateAspectRatioConvention)
 wheelDia.addEventListener("input", ()=> wheelDia.validity.valid||(wheelDia.value=''))
 wheelDia.addEventListener("input", validateWheelSmallerThanTire) //also check wheel is smaller than tire
 tireWt.addEventListener("input", ()=> tireWt.validity.valid||(tireWt.value=''))
 wheelWt.addEventListener("input", ()=> wheelWt.validity.valid||(wheelWt.value=''))
+
+function validateAspectRatioConvention(){
+  lastNum = aspRat.value % 10;
+  console.log(lastNum)
+  if (aspRat.value.length == 1) {(lastNum>0)||(aspRat.value='')}
+  if (aspRat.value.length == 2) {(lastNum == 0 || lastNum ==5)||(aspRat.value='')}
+}
+
+function validateTireWidthConvention(){
+  lastNum = tireWid.value % 10;
+  console.log(lastNum)
+  if (tireWid.value.length == 1) {(lastNum>0 && lastNum<10)||(tireWid.value='')}
+  //2nd tire number can anything
+  if (tireWid.value.length == 3) {(lastNum == 0 || lastNum ==5)||(tireWid.value='')}
+}
 
 function validateWheelSmallerThanTire() {
   if (tireDia.value)
@@ -186,6 +207,8 @@ function calculateTireInertia() {
   const wheelRad_m = (wheelDia.value) * 0.0254 / 2
   const sidewallInertia = 0.25 * (1/2) * tireMass_kg * (tireRad_m * tireRad_m + wheelRad_m * wheelRad_m)// console.log('sidewallInertia in kg*m^2: ' + sidewallInertia)
   tireRes.value = (treadInertia + sidewallInertia).toFixed(1)
+  tireResult.style.display="none"
+  tireResult.style.display="inline"
   calculateTotalInertia()}
 }
 

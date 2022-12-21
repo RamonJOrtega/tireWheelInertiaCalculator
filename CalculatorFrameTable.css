@@ -1,3 +1,11 @@
+datalist{
+    columns: 4;
+    -webkit-columns: 4;
+    -moz-columns: 4;
+    column-count: 4;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+}
 table, th, td {
     /* border:1px solid grey; */
     padding: 0;
