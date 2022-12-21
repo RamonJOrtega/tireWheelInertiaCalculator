@@ -79,7 +79,7 @@ wheelDia.min = 0
 wheelWt.min  = 0
 
 tireDia.max  = 100
-tireWid.max  = 100
+tireWid.max  = 1000
 aspRat.max   = 100
 tireWt.max   = 100
 wheelDia.max = 100
@@ -101,12 +101,22 @@ tireWt.addEventListener("click", () => tireWt.value = null)
 wheelDia.addEventListener("click", () => wheelDia.value = null)
 wheelWt.addEventListener("click", () => wheelWt.value = null)
 
+
 tireDia.addEventListener("input", calculateTireInertia)
 tireWid.addEventListener("input", calculateTireInertia)
 aspRat.addEventListener("input", calculateTireInertia)
+wheelDia.addEventListener("input", calculateWheelInertia)
 wheelDia.addEventListener("input", calculateTireInertia)
 tireWt.addEventListener("input", calculateTireInertia)
 wheelWt.addEventListener("input", calculateWheelInertia)
+
+tireDia.addEventListener("input", ()=> tireDia.validity.valid||(tireDia.value=''))
+tireWid.addEventListener("input", ()=> tireWid.validity.valid||(tireWid.value=''))
+aspRat.addEventListener("input", ()=> aspRat.validity.valid||(aspRat.value=''))
+wheelDia.addEventListener("input", ()=> wheelDia.validity.valid||(wheelDia.value=''))
+tireWt.addEventListener("input", ()=> tireWt.validity.valid||(tireWt.value=''))
+wheelWt.addEventListener("input", ()=> wheelWt.validity.valid||(wheelWt.value=''))
+
 
 calcDia.addEventListener("change", displayTireSizeElements)
 spc0.addEventListener("change", displayTireSizeElements)
@@ -198,4 +208,6 @@ function calculateTotalInertia() {
  
 }
 
- 
+function validateFormData () {
+
+}
