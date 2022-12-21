@@ -48,11 +48,11 @@ const tipText0= document.getElementById("tipText0")
 const toolTip1= document.getElementById("toolTip1")
 const tipText1= document.getElementById("tipText1")
 
-tireDia.placeholder  = "input dia."
+tireDia.placeholder  = "input dia. (larger than wheel)"
 tireWid.placeholder  = "input mm"
 aspRat.placeholder   = "input %"
 tireWt.placeholder   = "input wt."
-wheelDia.placeholder = "input dia."
+wheelDia.placeholder = "input dia. (smaller than tire)"
 wheelWt.placeholder  = "input wt."
 tireRes.placeholder  = "need more input"
 wheelRes.placeholder = "need more input"
@@ -105,8 +105,8 @@ wheelWt.addEventListener("click", () => wheelWt.value = null)
 tireDia.addEventListener("input", calculateTireInertia)
 tireWid.addEventListener("input", calculateTireInertia)
 aspRat.addEventListener("input", calculateTireInertia)
-wheelDia.addEventListener("input", calculateWheelInertia)
-wheelDia.addEventListener("input", calculateTireInertia)
+wheelDia.addEventListener("input", calculateWheelInertia) //wheelDia needs to calculate both inertias in the case that standard notation is used
+wheelDia.addEventListener("input", calculateTireInertia) //wheelDia needs to calculate both inertias in the case that standard notation is used
 tireWt.addEventListener("input", calculateTireInertia)
 wheelWt.addEventListener("input", calculateWheelInertia)
 
@@ -114,9 +114,14 @@ tireDia.addEventListener("input", ()=> tireDia.validity.valid||(tireDia.value=''
 tireWid.addEventListener("input", ()=> tireWid.validity.valid||(tireWid.value=''))
 aspRat.addEventListener("input", ()=> aspRat.validity.valid||(aspRat.value=''))
 wheelDia.addEventListener("input", ()=> wheelDia.validity.valid||(wheelDia.value=''))
+wheelDia.addEventListener("input", validateWheelSmallerThanTire) //also check wheel is smaller than tire
 tireWt.addEventListener("input", ()=> tireWt.validity.valid||(tireWt.value=''))
 wheelWt.addEventListener("input", ()=> wheelWt.validity.valid||(wheelWt.value=''))
 
+function validateWheelSmallerThanTire() {
+  if (tireDia.value)
+   {wheelDia.value<tireDia.value||(wheelDia.value ='tire!fit')}
+}
 
 calcDia.addEventListener("change", displayTireSizeElements)
 spc0.addEventListener("change", displayTireSizeElements)
