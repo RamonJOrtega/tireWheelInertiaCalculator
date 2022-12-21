@@ -22,7 +22,7 @@
 
     <table style="width:100%">
         <tr>
-            <td colspan="2" > <div id="tireDiameter" class="Tire"> &nbsp;Tire Diameter </div> <div id="tireWidth"> &nbsp; Tire Width</div></td>
+            <td colspan="2" > <div id="tireDiameter" class="Tire"> &nbsp;Tire Diameter </div> <div id="tireWidth" class="Tire"> &nbsp; Tire Width</div></td>
             <td colspan="3" > <div id="calcDiameter" >  Standard Notation <span id="toolTip">&#x24D8;</span> <p id="tipText"> Optional. <br> Use standard notation to get tire diameter </p></div> 
                 <div id="aspectRatio">Aspect Ratio</div>
             </td>
@@ -46,11 +46,11 @@
         
           <tr>
             <td><div  > <input class="num" id="tireWt" type="number"> </td>
-            <td style="text-align:right"><div class="postFix1"> pound </div> </div></td>
+            <td style="text-align:center"><div class="postFix1"> pound </div> </div></td>
 
             <td colspan="3"> <div id="space0">  <input id="spc0" type="checkbox"> <span class="postFix1"> ex. 325/40R22 </span>  </div> </td>
             <td> <div > <input class="num" id="wheelWt" type="number">  </div> </td>
-            <td style="text-align:right"><div class="postFix1"> pound </div></td>
+            <td style="text-align:center"><div class="postFix1"> pound </div></td>
           </tr>
 
           <tr>
@@ -61,12 +61,12 @@
           </tr>  
           
         <tr>
-            <td > <div > <input class="result" id="tireRes" type="number">  </div>  </td>
+            <td > <div > <input class="result" id="tireRes" type="number" disabled>  </div>  </td>
             <td style="text-align:center"><div class="postFix1"> kg&#x2022;m<sup>2</sup></div></td>
-            <td > <div > <input class="result" id="totalRes" type="number">  </div>  </td>
+            <td > <div > <input class="result" id="totalRes" type="number" disabled>  </div>  </td>
             <td style="text-align:right"><div class="postFix1"> kg&#x2022;      </div></td>
             <td style="text-align:left"> <div class="postFix1"> m<sup>2</sup>   </div></td>
-            <td > <div > <input class="result" id="wheelRes" type="number">  </div> </td>
+            <td > <div> <input class="result" id="wheelRes" type="number" disabled>  </div> </td>
             <td style="text-align:center"><div class="postFix1"> kg&#x2022;m<sup>2</sup></div></td>
         </tr>
       </table>

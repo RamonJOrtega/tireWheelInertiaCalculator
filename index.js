@@ -193,7 +193,9 @@ function calculateTotalInertia() {
   if (tireRes.value) {tireInertia = parseFloat(tireRes.value)}
   if (wheelRes.value) {wheelInertia = parseFloat(wheelRes.value)}
   const totalInertia = (tireInertia + wheelInertia).toFixed(1)
+
   totalRes.value = totalInertia
+ 
 }
 
  
