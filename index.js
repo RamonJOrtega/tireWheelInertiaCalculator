@@ -56,7 +56,7 @@ tireDia.placeholder  = "input dia."
 tireWid.placeholder  = "input mm"
 aspRat.placeholder   = "input %"
 tireWt.placeholder   = "input wt."
-wheelDia.placeholder = "input dia. > tire"
+wheelDia.placeholder = "input dia."
 wheelWt.placeholder  = "input wt."
 tireRes.placeholder  = "need more input"
 wheelRes.placeholder = "need more input"
@@ -106,6 +106,15 @@ wheelDia.addEventListener("click", () => wheelDia.value = null)
 wheelWt.addEventListener("click", () => wheelWt.value = null)
 
 
+tireDia.addEventListener("input", ()=> tireDia.validity.valid||(tireDia.value=''))
+tireWid.addEventListener("input", ()=> tireWid.validity.valid||(tireWid.value=''))
+tireWid.addEventListener("input", validateTireWidthConvention) //make sure width is 3 digits divisible by 5
+aspRat.addEventListener("input", ()=> aspRat.validity.valid||(aspRat.value=''))
+aspRat.addEventListener("input", validateAspectRatioConvention)
+wheelDia.addEventListener("input", ()=> wheelDia.validity.valid||(wheelDia.value=''))
+tireWt.addEventListener("input", ()=> tireWt.validity.valid||(tireWt.value=''))
+wheelWt.addEventListener("input", ()=> wheelWt.validity.valid||(wheelWt.value=''))
+
 tireDia.addEventListener("input", calculateTireInertia)
 tireWid.addEventListener("input", calculateTireInertia)
 aspRat.addEventListener("input", calculateTireInertia)
@@ -114,35 +123,6 @@ wheelDia.addEventListener("input", calculateTireInertia) //wheelDia needs to cal
 tireWt.addEventListener("input", calculateTireInertia)
 wheelWt.addEventListener("input", calculateWheelInertia)
 
-tireDia.addEventListener("input", ()=> tireDia.validity.valid||(tireDia.value=''))
-tireWid.addEventListener("input", ()=> tireWid.validity.valid||(tireWid.value=''))
-tireWid.addEventListener("input", validateTireWidthConvention) //make sure width is 3 digits divisible by 5
-aspRat.addEventListener("input", ()=> aspRat.validity.valid||(aspRat.value=''))
-aspRat.addEventListener("input", validateAspectRatioConvention)
-wheelDia.addEventListener("input", ()=> wheelDia.validity.valid||(wheelDia.value=''))
-wheelDia.addEventListener("input", validateWheelSmallerThanTire) //also check wheel is smaller than tire
-tireWt.addEventListener("input", ()=> tireWt.validity.valid||(tireWt.value=''))
-wheelWt.addEventListener("input", ()=> wheelWt.validity.valid||(wheelWt.value=''))
-
-function validateAspectRatioConvention(){
-  lastNum = aspRat.value % 10;
-  console.log(lastNum)
-  if (aspRat.value.length == 1) {(lastNum>0)||(aspRat.value='')}
-  if (aspRat.value.length == 2) {(lastNum == 0 || lastNum ==5)||(aspRat.value='')}
-}
-
-function validateTireWidthConvention(){
-  lastNum = tireWid.value % 10;
-  console.log(lastNum)
-  if (tireWid.value.length == 1) {(lastNum>0 && lastNum<10)||(tireWid.value='')}
-  //2nd tire number can anything
-  if (tireWid.value.length == 3) {(lastNum == 0 || lastNum ==5)||(tireWid.value='')}
-}
-
-function validateWheelSmallerThanTire() {
-  if (tireDia.value)
-   {wheelDia.value<tireDia.value||(wheelDia.value ='tire!fit')}
-}
 
 calcDia.addEventListener("change", displayTireSizeElements)
 spc0.addEventListener("change", displayTireSizeElements)
@@ -194,7 +174,6 @@ function displayTireSizeElements() {
 function calcTireDiaFromSize () {
   const sideWallHeight_in = (aspRat.value/100) * (tireWid.value/25.4)
   tireDia.value = (parseFloat(wheelDia.value) + 2*sideWallHeight_in)
-  console.log("tire diameter in inches is " + tireDia.value)
 }
 
 
@@ -221,7 +200,8 @@ function calculateWheelInertia() {                                              
     const hubInertia = 0.20 * (1/2) * wheelMass_kg * 0.165 * 0.165                              //console.log("hub inertia is " + hubInertia)
     const rimInertia = 0.55 * wheelMass_kg * wheelRad_m * wheelRad_m                            //console.log("RIM inertia is " + rimInertia)
     wheelRes.value = (rimInertia + spokeInertia + hubInertia).toFixed(1)
-    calculateTotalInertia()}
+    calculateTotalInertia()
+  }
 }
 
 
@@ -236,6 +216,17 @@ function calculateTotalInertia() {
  
 }
 
-function validateFormData () {
-
+function validateAspectRatioConvention(){
+  lastNum = aspRat.value % 10;
+  if (aspRat.value.length == 1) {(lastNum>0)||(aspRat.value='')}
+  if (aspRat.value.length == 2) {(lastNum == 0 || lastNum ==5)||(aspRat.value='')}
 }
+
+function validateTireWidthConvention(){
+  lastNum = tireWid.value % 10;
+  if (tireWid.value.length == 1) {(lastNum>0 && lastNum<10)||(tireWid.value='')}
+  //2nd tire number can anything
+  if (tireWid.value.length == 3) {(lastNum == 0 || lastNum ==5)||(tireWid.value='')}
+}
+
+
